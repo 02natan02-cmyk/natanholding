@@ -1,5 +1,5 @@
 /* Natan Holding GmbH – Hero-Globus (Canvas 2D, ohne externe Bibliotheken) */
-(function () {
+window.NH2D = function () {
   'use strict';
   var canvas = document.getElementById('globe');
   if (!canvas || !canvas.getContext) return;
@@ -311,4 +311,5 @@
   };
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (reduce) frame(performance.now()); });
   play();
-})();
+};
+if (!document.documentElement.classList.contains('gl')) window.NH2D();
