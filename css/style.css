@@ -781,3 +781,51 @@ html.cur-drag .cursor__ring b{opacity:1}
 @media (max-width:820px){.netz__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*clamp(18px,2.4vw,28px));padding:2px clamp(18px,2.4vw,28px) 6px;scrollbar-width:none}.netz__grid::-webkit-scrollbar{display:none}.nclk{flex:0 0 42%;scroll-snap-align:start}
   .netz__cards{grid-template-columns:1fr}.netz__story{grid-template-columns:1fr auto}.netz__time{grid-column:1/-1}}
 .credits-list{columns:2;column-gap:32px;padding-left:18px;font-size:14px}.credits-list li{break-inside:avoid;margin:0 0 6px}@media(max-width:700px){.credits-list{columns:1}}
+
+/* ===== Review-Runde: Feinschliff ===== */
+.hdr.is-scrolled{background:rgba(2,13,23,.88)}
+.glabel span{top:8px;padding:5px 10px;border-radius:999px;background:rgba(2,13,23,.88);border:1px solid rgba(17,193,198,.32);text-shadow:none;box-shadow:0 10px 30px -12px rgba(0,0,0,.8)}
+.section:not(.section--paper)+.section:not(.section--paper){padding-top:clamp(56px,7vw,104px)}
+/* Reel-Steuerung */
+.reel__ctl{display:flex;align-items:center;gap:16px 22px;margin-top:18px}
+.reel__count{display:flex;align-items:baseline;gap:6px;min-width:68px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--dim);font-variant-numeric:tabular-nums}
+.reel__count b{font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em}
+.reel__count i{font-style:normal}
+.reel__prog{flex:1;height:2px;border-radius:2px;background:var(--line);position:relative;overflow:hidden}
+.reel__prog i{position:absolute;inset:0;background:linear-gradient(90deg,var(--teal),var(--teal-2));transform-origin:left;transform:scaleX(var(--rp,.15));transition:transform .4s var(--ease)}
+.reel__btns{display:flex;gap:10px}
+.reel__btns .rbtn:disabled{opacity:.32;cursor:default;background:transparent;border-color:var(--line)}
+.reel__track{position:relative;scroll-padding-inline:var(--pad);-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 150px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 150px),transparent)}
+.reel.at-end .reel__track{-webkit-mask-image:none;mask-image:none}
+@media (max-width:899px){.reel__ctl{gap:14px}.reel__btns .rbtn{width:46px;height:46px}.reel__track{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 48px),transparent)}}
+/* Küchenmontage-Karte mit eigenem Foto */
+.co__media--img img{transition:transform 1.4s var(--ease)}
+.co:hover .co__media--img img{transform:scale(1.05)}
+/* Lebensweg: Stationen auf der Zeitleiste */
+.life__marks{position:absolute;left:0;right:0;top:1px;height:0}
+.lm{position:absolute;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center;color:inherit;font:inherit}
+.lm::before{content:"";width:9px;height:9px;border-radius:50%;background:#062033;border:1.5px solid rgba(127,227,230,.5);transition:transform .35s var(--ease),background .3s,border-color .3s,box-shadow .3s}
+.lm.done::before{background:var(--teal);border-color:var(--teal)}
+.lm.on::before{transform:scale(1.6);background:#fff;border-color:#fff;box-shadow:0 0 0 4px rgba(17,193,198,.22),0 0 18px rgba(17,193,198,.85)}
+.lm span{position:absolute;bottom:24px;left:50%;transform:translate(-50%,4px);white-space:nowrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);transition:color .3s,transform .35s var(--ease)}
+.lm:hover span,.lm:focus-visible span{color:var(--teal-2);transform:translate(-50%,0)}
+.lm.on span{color:#fff;transform:translate(-50%,0)}
+@media (max-width:899px){.lm{width:18px;margin-left:-9px}.lm span{display:none}.lm.on span{display:block}.lm:first-child span{left:0;transform:none}.lm:last-child span{left:auto;right:0;transform:none}}
+/* Hero: Orbit-Ring läuft sichtbar „hinter" dem Text vorbei, Text bleibt klar lesbar */
+@media (min-width:900px){
+  .hero-copy__in{position:relative}
+  .hero-copy__in::before{content:"";position:absolute;z-index:-1;left:-14%;right:-22%;top:-4%;bottom:-6%;background:radial-gradient(closest-side,rgba(1,8,14,.62),rgba(1,8,14,.38) 60%,rgba(1,8,14,0));pointer-events:none}
+  .hero-copy .lede,.hero-copy .h1{text-shadow:0 2px 18px rgba(1,8,14,.75)}
+}
+/* Netzwerk: Weltkarte Tag & Nacht (live) */
+.nmap{position:relative;margin:0 0 14px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(90% 120% at 50% 0%,rgba(17,193,198,.07),transparent 65%),rgba(1,9,17,.6)}
+.nmap canvas{display:block;width:100%;height:auto}
+.nmap__lg{position:absolute;left:14px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);pointer-events:none}
+.nmap__lg span{display:flex;align-items:center;gap:7px}
+.nmap__lg span::before{content:"";width:7px;height:7px;border-radius:50%}
+.nmap__lg .d::before{background:#ffcf7a;box-shadow:0 0 10px rgba(255,207,122,.85)}
+.nmap__lg .n::before{background:rgba(127,227,230,.45)}
+.nmap__lg .s::before{width:9px;height:9px;background:#ffe2a6;box-shadow:0 0 0 3px rgba(255,207,122,.25),0 0 12px rgba(255,207,122,.9)}
+@media (max-width:820px){.nmap{margin:0 calc(-1*clamp(18px,2.4vw,28px)) 12px;border-radius:0;border-left:0;border-right:0}.nmap__lg{left:12px;bottom:8px;font-size:9.5px;gap:4px 12px}.nmap__lg .s{display:none}}
+.life{height:500vh;height:500svh}
+.rm .life,.no-gl .life{height:auto}

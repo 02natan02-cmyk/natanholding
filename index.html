@@ -29,7 +29,7 @@
 <link rel="preload" href="fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=1792095854">
+<link rel="stylesheet" href="css/style.css?v=1792114770">
 <script>(function(){var d=document.documentElement;d.classList.add('js');var r=matchMedia('(prefers-reduced-motion: reduce)').matches,g=false;try{var c=document.createElement('canvas');g=!!(window.WebGLRenderingContext&&(c.getContext('webgl2')||c.getContext('webgl')))}catch(e){}d.classList.add(g&&!r?'gl':'no-gl');if(r)d.classList.add('rm')})()</script>
 <script type="application/ld+json">
 {
@@ -205,6 +205,14 @@
     <button class="tile tile--v" type="button" data-place="mn" data-clip="mongolei"><span class="tile__m"><img src="media/mongolei.webp" alt="" loading="lazy" width="360" height="640"></span><span class="tile__t"><b data-i18n="cMn">Mongolei</b><small data-i18n="cSteppe">Steppe</small></span></button>
     <button class="tile tile--v" type="button" data-place="no" data-clip="norwegen"><span class="tile__m"><img src="media/norwegen.webp" alt="" loading="lazy" width="360" height="640"></span><span class="tile__t"><b data-i18n="cNo">Norwegen</b><small data-i18n="cFjell">Fjell</small></span></button>
   </div>
+  <div class="wrap reel__ctl">
+    <span class="reel__count" aria-hidden="true"><b>01</b><i>/</i><span>07</span></span>
+    <div class="reel__prog" aria-hidden="true"><i></i></div>
+    <div class="reel__btns">
+      <button class="rbtn" type="button" data-reel="-1" aria-label="Vorheriger Ort" data-i18n-attr="aria-label:prevPlace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="rbtn" type="button" data-reel="1" aria-label="Nächster Ort" data-i18n-attr="aria-label:nextPlace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
 </section>
 
 <!-- ============ HOLDING: Statement + Zahlen ============ -->
@@ -325,6 +333,7 @@
         <a class="btn btn--ghost mag" href="https://falcon-eye.de" target="_blank" rel="noopener"><span>falcon-eye.de</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only" data-i18n="newTab">(öffnet in neuem Tab)</span></a>
       </article>
       <article class="co co--plan tilt" id="kueche" data-cc="NK" data-rv style="--d:.1s">
+        <div class="co__media co__media--img"><img src="img/nk-kueche.webp" alt="Von Natan Küchenmontage montierte Küche in Betonoptik mit Kochinsel" loading="lazy" width="1200" height="600"><span class="co__media-l" data-i18n="nkMediaL">Montage: Natan Küchenmontage</span></div>
         <div class="co__head"><span class="tag tag--plan" data-i18n="gPlan">In Vorbereitung</span><span class="tag" data-i18n="nkTag">Seit der Gründung aktiv</span></div>
         <h3>Natan Küchenmontage</h3>
         <p data-i18n="nkText">Die erste Firma von Natan Wojtasczyk, gegründet mit 21 und bis heute am Markt: Küchenmontage mit Präzision, Geduld und sauberem Handwerk. Geplant ist die Umwandlung in eine GmbH.</p>
@@ -474,7 +483,7 @@
         <li class="st st--last"><b class="st__big" data-i18n="l13b">Welt</b><span class="st__k" data-i18n="l13k">Als Nächstes</span><p data-i18n="l13">Falcon Eye und Natan Küchenmontage sollen unter das Dach der Holding. Die Richtung: in alle Richtungen.</p></li>
       </ol>
     </div>
-    <div class="life__bar" aria-hidden="true"><i></i></div>
+    <div class="life__bar" aria-hidden="true"><i></i><div class="life__marks"></div></div>
   </div>
 </section>
 
@@ -557,7 +566,7 @@
       <p class="lede" data-rv data-i18n="nzLede">Wo Natan Wojtasczyk unterwegs war, sind Kontakte geblieben: von der Dominikanischen Republik bis Bali, von Vietnam bis Norwegen, von Teneriffa bis Dubai, von Ägypten bis Bangkok. Keine Visitenkarten im Schuhkarton – sondern Menschen, die man auch um Mitternacht anrufen kann.</p>
     </div>
     <div class="netz__clocks" data-rv>
-      <p class="netz__cap"><span class="netz__live" aria-hidden="true"></span><span data-i18n="nzClk">Jetzt gerade – irgendwo ist immer jemand wach.</span></p>
+      <p class="netz__cap"><span class="netz__live" aria-hidden="true"></span><span data-i18n="nzClk">Jetzt gerade – irgendwo ist immer jemand wach.</span></p><div class="nmap" aria-hidden="true"><canvas></canvas><div class="nmap__lg"><span class="d" data-i18n="nzDay">Tag</span><span class="n" data-i18n="nzNight">Nacht</span><span class="s" data-i18n="nzSun">Sonnenstand live</span></div></div>
       <div class="netz__grid" role="list"><button class="nclk" type="button" data-place="do" data-tz="America/Santo_Domingo"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncDo">Santo Domingo</span></button><button class="nclk" type="button" data-place="ic" data-tz="Atlantic/Canary"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncIc">Teneriffa</span></button><button class="nclk" type="button" data-place="sb" data-tz="Europe/Berlin"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncSb">Saarbrücken</span></button><button class="nclk" type="button" data-place="no" data-tz="Europe/Oslo"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncNo">Oslo</span></button><button class="nclk" type="button" data-place="eg" data-tz="Africa/Cairo"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncEg">Kairo</span></button><button class="nclk" type="button" data-place="dxb" data-tz="Asia/Dubai"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncDxb">Dubai</span></button><button class="nclk" type="button" data-place="bkk" data-tz="Asia/Bangkok"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncBkk">Bangkok</span></button><button class="nclk" type="button" data-place="vn" data-tz="Asia/Bangkok"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncVn">Hạ Long</span></button><button class="nclk" type="button" data-place="bali" data-tz="Asia/Makassar"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncBali">Bali</span></button><button class="nclk" type="button" data-place="ulb" data-tz="Asia/Ulaanbaatar"><i class="nclk__s" aria-hidden="true"></i><b class="nclk__t">--:--</b><span class="nclk__c" data-i18n="ncUlb">Ulaanbaatar</span></button></div>
     </div>
     <div class="netz__story" data-rv>
@@ -689,8 +698,8 @@
 <script src="js/gsap.min.js" defer></script>
 <script src="js/ScrollTrigger.min.js" defer></script>
 <script src="js/lenis.min.js" defer></script>
-<script src="js/i18n.js?v=1792095854" defer></script>
+<script src="js/i18n.js?v=1792114770" defer></script>
 <script src="js/globe.js" defer></script>
-<script type="module" src="js/app.js?v=1792095854"></script>
+<script type="module" src="js/app.js?v=1792114770"></script>
 </body>
 </html>
